@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Course Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cardview:cardCornerRadius="16dp"
+            cardview:cardElevation="6dp"
+            android:layout_marginBottom="16dp"
+            android:background="#EFEFEF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#D893E4"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/courseImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/course_image_desc" />
+
+                <TextView
+                    android:id="@+id/courseTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Title"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#3F51B5"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/courseDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Description: This is a description of the course..."
+                    android:textSize="16sp"
+                    android:textColor="#0B0505"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/courseDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration: 4 weeks"
+                    android:textSize="14sp"
+                    android:textColor="#040101"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/courseLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level: Intermediate"
+                    android:textSize="14sp"
+                    android:textColor="#020101"
+                    android:layout_marginTop="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/instructorImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/instructor_image_desc" />
+
+                    <TextView
+                        android:id="@+id/instructorName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instructor: John Doe"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#009688" />
+                </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4.0"
+                    android:stepSize="0.5"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Schedule Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cardview:cardCornerRadius="12dp"
+            cardview:cardElevation="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="#F5F6F6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#78D8F0"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/courseScheduleLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course Schedule"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#3146EB" />
+
+                <TextView
+                    android:id="@+id/courseSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date: May 1, 2025\nEnd Date: June 1, 2025\nClass Time: Tues &amp; Thurs 2–4 PM"
+                    android:textSize="16sp"
+                    android:textColor="#444444" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Requirements Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cardview:cardCornerRadius="12dp"
+            cardview:cardElevation="4dp"
+            android:background="#E3F2FD">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#78D8F0"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/courseRequirementsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course Requirements"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2196F3" />
+
+                <TextView
+                    android:id="@+id/courseRequirements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No prior knowledge required. Basic understanding of computers is helpful."
+                    android:textSize="16sp"
+                    android:textColor="#444444" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/enrollButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enroll Now"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/startCourseButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start Course"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#A0A2A0"
+                android:layout_marginStart="8dp"
+                android:enabled="false" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

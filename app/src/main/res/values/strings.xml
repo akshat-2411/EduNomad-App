@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">EduNomad</string>
+    <string name="course_image_desc">Image representing the course</string>
+    <string name="instructor_image_desc">Image representing the course</string>
+
+</resources>

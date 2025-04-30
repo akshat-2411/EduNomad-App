@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:gravity="bottom"
+    android:padding="16dp"
+    android:background="@color/primaryColor"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/img_17"
+        android:contentDescription="User Image"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, User 👋"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:animationCache="false" />
+</LinearLayout>

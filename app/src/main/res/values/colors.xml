@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#6200EE</color>
+    <color name="menu_bar">#F09E83</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="secondaryColor">#03DAC5</color>
+    <color name="backgroundColor">#FFC107</color>
+    <color name="cardColor">#FFFFFF</color>
+    <color name="textColor">#000000</color>
+    <color name="mycoursecolor">#757575</color>
+    <color name="hintColor">#A2E9A5</color>
+    <color name="abc">#E6CD84</color>
+    <color name="lightGray">#9D9A98</color>
+    <color name="green_color">#4CAF50</color>
+    <color name="green_light">#81C784</color>
+
+    <!-- From theme -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="yellow">#FFEB3B</color>
+
+    <color name="gray">#F4F4F4</color>
+    <color name="orange">#FF8F00</color>
+    <color name="blue">#1565C0</color>
+
+    <!-- Useful additions -->
+    <color name="error_red">#D32F2F</color>
+    <color name="success_green">#388E3C</color>
+    <color name="info_blue">#2196F3</color>
+    <color name="darkGray">#616161</color>
+    <color name="gray_background">#F5F5F5</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary">#757575</color>
+    <color name="transparent_black">#80000000</color>
+</resources>

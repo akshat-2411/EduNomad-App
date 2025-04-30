@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377956875281",
+    "project_id": "edunomad-2f0c5",
+    "storage_bucket": "edunomad-2f0c5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377956875281:android:08734c82a23d2ef808c5b0",
+        "android_client_info": {
+          "package_name": "com.example.edunomad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoykSDi-IzecL9mPlZ_JbyDTD-43Iyr0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#D0EAF0"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <!-- Icon/Image for Category -->
+        <ImageView
+            android:id="@+id/categoryImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_3"
+            android:scaleType="centerCrop"
+            android:contentDescription="Category Icon"
+            android:background="@drawable/rounded_background"
+            android:padding="10dp"/>
+
+        <!-- Category Name -->
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Programming"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/textColor" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

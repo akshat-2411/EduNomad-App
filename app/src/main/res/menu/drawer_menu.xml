@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home" android:title="Home" android:icon="@drawable/ic_explore"/>
+    <item android:id="@+id/nav_courses" android:title="My Courses" android:icon="@drawable/ic_mycourse"/>
+    <item android:id="@+id/nav_chat" android:title="Ask Me Anything" android:icon="@drawable/ic_quiz"/>
+    <item android:id="@+id/nav_notifications" android:title="Notifications" android:icon="@drawable/img_18"/>
+    <item android:id="@+id/nav_profile" android:title="Profile" android:icon="@drawable/ic_profile"/>
+    <item android:id="@+id/nav_settings" android:title="Settings" android:icon="@drawable/img_20"/>
+    <item android:id="@+id/nav_logout" android:title="Logout" android:icon="@drawable/img_21"/>
+</menu>

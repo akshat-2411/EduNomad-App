@@ -1,0 +1,55 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.edunomad">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EduNomad"
+        tools:targetApi="31">
+
+        <!-- ✅ MainActivity -->
+        <activity
+            android:name=".SignInActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ Auth Activities -->
+        <activity android:name=".SignUpActivity" android:exported="true" />
+        <activity android:name=".MainActivity"  android:exported="true"/>
+
+        <!-- ✅ Other App Activities -->
+        <activity android:name=".AllCoursesActivity" android:exported="true" />
+        <activity android:name=".AllCategoriesActivity" android:exported="true" />
+        <activity android:name=".SearchActivity" android:exported="true" />
+        <activity android:name=".CourseDetailsActivity" android:exported="true"/>
+        <activity android:name=".MyCoursesActivity" android:exported="true" />
+        <activity android:name=".CourseContentActivity" />
+        <activity android:name=".EnrolledCoursesActivity" />
+        <activity android:name=".AskMeAnythingActivity" android:exported="true" />
+        <activity android:name=".CategoryCoursesActivity" android:exported="true" />
+        <activity android:name=".VideoPlayerActivity" android:exported="true" />
+        <activity android:name=".PdfViewerActivity" android:exported="true" />
+        <activity android:name=".ProfileActivity" android:exported="true" />
+
+        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".MainActivity3"></activity> <!-- If you want to use this instead of QuizActivity -->
+
+
+
+
+
+    </application>
+</manifest>
