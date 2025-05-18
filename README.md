@@ -31,7 +31,10 @@
 - **Authentication:** Firebase Auth / Google Sign-In
 
 ## 📱 Screenshots
-
+![1](https://github.com/user-attachments/assets/a18464fe-f559-4973-879e-1396060806ba)
+![2](https://github.com/user-attachments/assets/78c85f3f-98a1-4645-a745-16e9f5bdd68c)
+![3](https://github.com/user-attachments/assets/3b376d55-e092-48b3-be41-e2119b92a84b)
+![4](https://github.com/user-attachments/assets/c365ef10-34fd-4d3c-9446-2e825e2ae7e2)
 
 ### Prerequisites
 
@@ -39,7 +42,7 @@
 - Android device or emulator (API level 21 or higher)
 
 ### 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - GNU GENERAL PUBLIC LICENSE.
 
 ### 🤝 Contribution
 Contributions are welcome! Please follow the guidelines below:
@@ -50,6 +53,6 @@ Push to the branch
 Open a pull request
 
 ### 🙋 Support
-For support or inquiries, open an issue or contact the maintainer at [your-email@example.com].
+For support or inquiries, open an issue or contact the maintainer at [santosh060878@gmail.com].
 
 
