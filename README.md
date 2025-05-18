@@ -31,10 +31,7 @@
 - **Authentication:** Firebase Auth / Google Sign-In
 
 ## 📱 Screenshots
-![1](https://github.com/user-attachments/assets/a18464fe-f559-4973-879e-1396060806ba)
-![2](https://github.com/user-attachments/assets/78c85f3f-98a1-4645-a745-16e9f5bdd68c)
-![3](https://github.com/user-attachments/assets/3b376d55-e092-48b3-be41-e2119b92a84b)
-![4](https://github.com/user-attachments/assets/c365ef10-34fd-4d3c-9446-2e825e2ae7e2)
+![1](https://github.com/user-attachments/assets/a18464fe-f559-4973-879e-1396060806ba)![2](https://github.com/user-attachments/assets/78c85f3f-98a1-4645-a745-16e9f5bdd68c)![3](https://github.com/user-attachments/assets/3b376d55-e092-48b3-be41-e2119b92a84b)![4](https://github.com/user-attachments/assets/c365ef10-34fd-4d3c-9446-2e825e2ae7e2)
 
 ### Prerequisites
 
