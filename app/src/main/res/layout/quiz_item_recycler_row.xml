@@ -1,60 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="4dp"
-    android:elevation="10dp"
-    app:cardCornerRadius="24dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- 🧠 Quiz Info -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:orientation="vertical">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/quiz_title_text"
-                tools:text="Android"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Android Basics"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                tools:text="Android Quiz" />
+
+            <TextView
                 android:id="@+id/quiz_subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                tools:text="All about Android OS"/>
+                android:text="Test your Android knowledge!"
+                android:textColor="#555"
+                android:textSize="14sp"
+                tools:text="All about Android OS" />
         </LinearLayout>
+
+        <!-- ⏱️ Duration -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/icon_timer"
-                app:tint="@color/orange" />
+                app:tint="@color/orange"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="Timer icon" />
+
             <TextView
+                android:id="@+id/quiz_time_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/quiz_time_text"
-                tools:text="20 min"/>
-
+                android:text="20 min"
+                android:textColor="#555"
+                android:textSize="14sp"
+                tools:text="15 min" />
         </LinearLayout>
-
     </RelativeLayout>
-
-
-
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

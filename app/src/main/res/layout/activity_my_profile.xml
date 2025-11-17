@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#F3F7FB"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true"
+    tools:context=".ProfileActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -10,107 +14,143 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Profile Header -->
-        <LinearLayout
+        <!-- 🟦 Profile Header -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/profile_header_bg"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/primaryColor"
             android:padding="20dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/img_17"
-                android:scaleType="centerCrop"
-                android:background="@drawable/profile_image_bg"
-                android:padding="4dp"
-                android:layout_marginEnd="16dp" />
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Profile Image -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/img_17"
+                    android:scaleType="centerCrop"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/white"
+                    android:layout_marginEnd="16dp" />
+
+                <!-- Profile Info -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="John Doe"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="john.doe@example.com"
+                        android:textColor="#E3E7F1"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 🟩 Stats Section -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <include
+                android:id="@+id/courses_enrolled"
+                layout="@layout/profile_stat_card" />
+
+            <include
+                android:id="@+id/courses_completed"
+                layout="@layout/profile_stat_card" />
+
+            <include
+                android:id="@+id/badges_earned"
+                layout="@layout/profile_stat_card" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:padding="20dp">
+
+            <LinearLayout
                 android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/name"
-                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
-                    android:text="John Doe"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGray"
+                    android:layout_marginBottom="8dp" />
 
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/btn_edit_profile"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="john.doe@example.com"
-                    android:textColor="#DCE3F3"
-                    android:textSize="14sp" />
+                    android:text="Edit Profile"
+                    android:textColor="@color/primaryColor"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="12dp"
+                    android:paddingVertical="12dp" />
+
+                <TextView
+                    android:id="@+id/btn_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Change Password"
+                    android:textColor="@color/primaryColor"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="12dp"
+                    android:paddingVertical="12dp" />
+
+                <TextView
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textColor="#D32F2F"
+                    android:drawableStart="@drawable/ic_logout"
+                    android:drawablePadding="12dp"
+                    android:paddingVertical="12dp" />
             </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Stats Section -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:weightSum="3">
 
-            <include layout="@layout/profile_stat_card"
-                android:id="@+id/courses_enrolled" />
-
-            <include layout="@layout/profile_stat_card"
-                android:id="@+id/courses_completed" />
-
-            <include layout="@layout/profile_stat_card"
-                android:id="@+id/badges_earned" />
-        </LinearLayout>
-
-        <!-- Settings Section -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:elevation="2dp"
-            android:padding="16dp">
-
-            <TextView android:text="Settings"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:textColor="#0F172A" />
-
-            <TextView android:id="@+id/btn_edit_profile"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Edit Profile"
-                android:textColor="#1976D2"
-                android:paddingVertical="8dp" />
-
-            <TextView android:id="@+id/btn_change_password"
-                android:text="Change Password"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textColor="#1976D2"
-                android:paddingVertical="8dp" />
-
-            <TextView android:id="@+id/btn_logout"
-                android:text="Logout"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textColor="#D32F2F"
-                android:paddingVertical="8dp" />
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>

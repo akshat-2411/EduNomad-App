@@ -27,7 +27,7 @@ class AskMeAnythingActivity : AppCompatActivity() {
     private val chatList = mutableListOf<ChatMessage>()
 
     private val firestore = FirebaseFirestore.getInstance()
-    private val GEMINI_API_KEY = "AIzaSyAtMA16BdIsIKFXzw5Dmnq_ofLAZMaPmnE" // Replace this with a secure method
+    private val GEMINI_API_KEY = "AIzaSyBvUh0kfT770ZPpAojy9nNgo3n9B4RzV-k" // Replace this with a secure method
 
     private val faqMap = mapOf(
         "how to enroll" to "Go to the Courses section, select your course, and tap the Enroll button.",

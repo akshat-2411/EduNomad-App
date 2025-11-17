@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="120dp"
+    android:layout_width="140dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:strokeColor="@color/primaryColor"
+    app:strokeWidth="1dp"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#D0EAF0"
-        android:padding="10dp"
-        android:gravity="center_horizontal">
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_category_gradient">
 
-        <!-- Icon/Image for Category -->
-        <ImageView
+        <!-- Category Image -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/categoryImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/img_3"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:scaleType="centerCrop"
-            android:contentDescription="Category Icon"
-            android:background="@drawable/rounded_background"
-            android:padding="10dp"/>
+            android:src="@drawable/img_3"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/primaryColor"
+            android:contentDescription="Category Icon" />
 
         <!-- Category Name -->
         <TextView
             android:id="@+id/categoryName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:text="Programming"
-            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="@color/textColor" />
+            android:gravity="center" />
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

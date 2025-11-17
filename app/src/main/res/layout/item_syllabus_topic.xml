@@ -1,44 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp">
-
-    <TextView
-        android:id="@+id/syllabusTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Topic Title"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="8dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/watchVideoButton"
+        <!-- 🧩 Syllabus Title -->
+        <TextView
+            android:id="@+id/syllabusTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Topic Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor" />
+
+        <!-- 🎥📘 Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/watchVideoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watch Video"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_play_circle"
+                app:iconTint="@color/white"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                app:backgroundTint="@color/primaryColor" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/downloadPdfButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PDF"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp"
+                android:layout_marginStart="12dp"
+                app:icon="@drawable/ic_file_download"
+                app:iconTint="@color/white"
+                app:backgroundTint="#2196F3" />
+        </LinearLayout>
+
+        <!-- ✅ Completion Checkbox -->
+        <CheckBox
+            android:id="@+id/completedCheckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Watch Video" />
-
-        <Button
-            android:id="@+id/downloadPdfButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Download PDF"
-            android:layout_marginStart="12dp" />
+            android:text="Mark as completed"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="12dp"
+            android:buttonTint="#4CAF50" />
     </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/completedCheckbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mark as completed"
-        android:layout_marginTop="8dp" />
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

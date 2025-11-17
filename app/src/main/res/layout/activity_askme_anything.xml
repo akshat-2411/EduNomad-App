@@ -1,38 +1,74 @@
-<!-- res/layout/activity_askme_anything.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"> <!-- Soft background color -->
+    android:background="?android:attr/colorBackground"
+    android:padding="12dp"
+    tools:context=".AskMeAnythingActivity">
 
-    <!-- Chat RecyclerView with an initial message as background -->
-    <FrameLayout
+    <!-- Header -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/chatRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:clipToPadding="false" />
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp">
 
         <TextView
-            android:id="@+id/emptyChatHint"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="What can I help with?"
-            android:textSize="18sp"
-            android:textColor="#070707"
-            android:layout_gravity="center"
-            android:padding="16dp"
-            android:gravity="center"
-            android:visibility="visible" />
-    </FrameLayout>
+            android:text="Ask Me Anything 🤖"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- Chat area -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#E0E0E0"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="@color/white"
+        android:padding="8dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chatRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_chat_message" />
+
+            <TextView
+                android:id="@+id/emptyChatHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What can I help you with today?"
+                android:textSize="18sp"
+                android:textColor="#8A8A8A"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:gravity="center"
+                android:visibility="visible"/>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
     <!-- Input section -->
@@ -40,23 +76,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="4dp">
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
 
-        <EditText
-            android:id="@+id/userInput"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="Ask a question..."
-            android:minHeight="48dp"
-            android:background="@drawable/chat_input_bg"
-            android:padding="8dp" />
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomEnd="16dp">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Send"
-            android:layout_marginStart="8dp" />
+            android:textAllCaps="false"
+            app:cornerRadius="16dp"
+            app:iconTint="@color/white"
+            app:backgroundTint="@color/primaryColor" />
     </LinearLayout>
+
 </LinearLayout>

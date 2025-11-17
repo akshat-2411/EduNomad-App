@@ -1,24 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="start"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="6dp"
+    android:layout_marginVertical="4dp">
 
-    <TextView
-        android:id="@+id/botMessage"
+    <!-- Chat bubble -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bot_bubble"
-        android:textColor="@android:color/black"
-        android:padding="10dp"
-        android:text="Bot Reply" />
+        android:background="@drawable/bg_bot_message"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:layout_marginBottom="4dp">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_bot_avatar"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Bot Icon" />
+
+        <TextView
+            android:id="@+id/botMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello! How can I help you today?"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:lineSpacingExtra="3dp"
+            android:maxWidth="300dp" />
+    </LinearLayout>
+
+    <!-- Timestamp -->
     <TextView
         android:id="@+id/botTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textColor="@android:color/darker_gray"
-        android:paddingTop="2dp"/>
+        android:text="12:45 PM"
+        android:textSize="11sp"
+        android:textColor="#888"
+        android:layout_marginStart="32dp" />
 </LinearLayout>

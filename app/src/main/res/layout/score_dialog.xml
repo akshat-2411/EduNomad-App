@@ -1,56 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:padding="16dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/white"
+    android:padding="20dp">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Congrats! You have passed"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:id="@+id/score_title"/>
+        android:gravity="center_horizontal">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/score_progress_indicator"
-            android:layout_centerVertical="true"
-            app:trackColor="@color/gray"
-            tools:progress="60"
-            app:trackCornerRadius="20dp"
-            app:trackThickness="8dp"
-            app:indicatorSize="90dp"/>
+        <!-- 🏆 Title -->
         <TextView
+            android:id="@+id/score_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="🎉 Congrats! You Passed!"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 🟣 Circular Progress with Percentage -->
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="50%"
-            android:textSize="18sp"
-            android:layout_centerInParent="true"
-            android:textStyle="bold"
-            android:id="@+id/score_progress_text"/>
-    </RelativeLayout>
+            android:layout_marginBottom="16dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="6 out of 10 questions are correct"
-        android:gravity="center"
-        android:id="@+id/score_subtitle"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finish"
-        android:layout_margin="8dp"
-        android:id="@+id/finish_btn"/>
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/score_progress_indicator"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:indicatorSize="120dp"
+                app:trackColor="@color/lightGray"
+                app:trackThickness="10dp"
+                app:indicatorInset="4dp"
+                app:indicatorColor="@color/primaryColor"
+                tools:progress="80" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/score_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="80%"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <!-- 📊 Subtitle -->
+        <TextView
+            android:id="@+id/score_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="You answered 8 out of 10 questions correctly!"
+            android:gravity="center"
+            android:textColor="#555"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- ✅ Finish Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/finish_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="10dp"
+            app:cornerRadius="20dp"
+            app:backgroundTint="@color/primaryColor"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

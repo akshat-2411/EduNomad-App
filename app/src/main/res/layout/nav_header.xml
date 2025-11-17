@@ -1,34 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:gravity="bottom"
-    android:padding="16dp"
-    android:background="@color/primaryColor"
+    android:layout_height="200dp"
+    android:gravity="center_horizontal|bottom"
+    android:paddingBottom="20dp"
+    android:background="@drawable/bg_nav_header_gradient"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
+    <!-- 🧑‍🎓 Profile Picture -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userImage"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
         android:src="@drawable/img_17"
         android:contentDescription="User Image"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
         app:shapeAppearanceOverlay="@style/CircleImage"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="12dp" />
 
+    <!-- 👋 Welcome Message -->
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome, User 👋"
+        android:text="Welcome, Akshat 👋"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:animationCache="false" />
+        android:textSize="20sp"
+        android:layout_marginBottom="4dp"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2" />
+
+    <!-- ✉ Email or Username -->
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="akshat@example.com"
+        android:textColor="#E3E3E3"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
 </LinearLayout>

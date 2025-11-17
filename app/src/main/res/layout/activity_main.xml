@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,31 +8,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Main content -->
+    <!-- ===== Main Content Area ===== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="?android:attr/colorBackground">
 
-        <!-- Top App Bar -->
+        <!-- ✅ Top App Bar -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/primaryColor"
             android:title="EduNomad"
-            android:titleTextColor="@android:color/black"
+            android:titleTextColor="@color/white"
             app:navigationIcon="@drawable/baseline_menu_24"
             app:menu="@menu/top_app_bar_menu"
-             />
+            app:titleCentered="true"
+            app:elevation="6dp"
+            tools:ignore="HardcodedText" />
 
-        <!-- Scrollable Content with Your Layout -->
+        <!-- ✅ Scrollable Main Section -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,16 +43,15 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Search Bar -->
-                <androidx.cardview.widget.CardView
+                <!-- 🔍 Search Bar -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="4dp"
-                    android:radius="10dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="4dp"
-                    android:padding="8dp"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="16dp"
+                    app:strokeColor="@color/lightGray"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -57,69 +60,81 @@
                         android:gravity="center_vertical"
                         android:padding="8dp">
 
-                        <EditText
-                            android:id="@+id/search_bar"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Search..."
-                            android:textColor="@color/textColor"
-                            android:padding="10dp"
-                            android:background="@android:drawable/edit_text"
-                            android:drawableStart="@android:drawable/ic_menu_search" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                            android:hint="Search for courses..."
+                            app:startIconDrawable="@drawable/ic_search"
+                            app:boxCornerRadiusTopStart="16dp"
+                            app:boxCornerRadiusTopEnd="16dp"
+                            app:boxCornerRadiusBottomStart="16dp"
+                            app:boxCornerRadiusBottomEnd="16dp"
+                            app:boxBackgroundColor="@color/white"
+                            tools:ignore="HardcodedText">
 
-                <!-- Promotion Banner with ViewPager2 -->
-                <androidx.cardview.widget.CardView
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/search_bar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 🖼 Promotion Banner (ViewPager) -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:elevation="4dp"
-                    android:radius="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="4dp">
+                    android:layout_height="220dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginBottom="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
+                        <!-- ✅ FIXED: Height set to 0dp with weight for proportional fill -->
                         <androidx.viewpager2.widget.ViewPager2
                             android:id="@+id/view_pager"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1" />
 
                         <com.google.android.material.tabs.TabLayout
                             android:id="@+id/tab_layout"
                             android:layout_width="match_parent"
-                            android:layout_height="5dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
                             app:tabGravity="center"
-                            android:backgroundTint="@color/white"
                             app:tabIndicatorColor="@color/primaryColor"
                             app:tabSelectedTextColor="@color/primaryColor"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            app:tabIndicatorFullWidth="false" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <!-- Categories -->
+
+                <!-- 📂 Categories Section -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="8dp"
+                    android:paddingHorizontal="8dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="Categories"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/textColor" />
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/seeAllCategories"
@@ -129,7 +144,8 @@
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/primaryColor"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -137,31 +153,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:overScrollMode="never"
-                    android:scrollbars="none"
-                    android:orientation="horizontal" />
+                    android:paddingHorizontal="8dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:scrollbars="none" />
 
-
-                <!-- Courses -->
+                <!-- 🎓 Courses Section -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="20dp"
+                    android:paddingHorizontal="8dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="Course"
-                        android:textSize="18sp"
+                        android:text="Courses"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/textColor" />
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/seeAllCourse"
@@ -171,7 +185,8 @@
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/primaryColor"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -179,29 +194,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:overScrollMode="never"
-                    android:scrollbars="none"
-                    android:orientation="horizontal" />
+                    android:paddingHorizontal="8dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:scrollbars="none" />
             </LinearLayout>
         </ScrollView>
 
-        <!-- Bottom Navigation -->
+        <!-- ✅ Bottom Navigation -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottome_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            app:menu="@menu/bottome_nav_menu" />
+            app:itemRippleColor="@color/primaryColor"
+            app:itemTextColor="@color/primaryColor"
+            app:menu="@menu/bottome_nav_menu"
+            app:labelVisibilityMode="labeled" />
     </LinearLayout>
 
-    <!-- Navigation Drawer -->
+    <!-- ✅ Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/nav_header" />
+        app:headerLayout="@layout/nav_header"
+        android:background="@color/white" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

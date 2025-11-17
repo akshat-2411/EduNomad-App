@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:fillViewport="true"
-    android:background="#F5F5F5">
+    android:background="?android:attr/colorBackground"
+    tools:context=".CourseDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,169 +15,175 @@
         android:orientation="vertical">
 
         <!-- Course Card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cardview:cardCornerRadius="16dp"
-            cardview:cardElevation="6dp"
-            android:layout_marginBottom="16dp"
-            android:background="#EFEFEF">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#D893E4"
                 android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/courseImage"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@string/course_image_desc" />
 
                 <TextView
                     android:id="@+id/courseTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Course Title"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#3F51B5"
-                    android:layout_marginTop="8dp" />
+                    android:textColor="@color/primaryColor"
+                    android:layout_marginTop="12dp" />
 
                 <TextView
                     android:id="@+id/courseDescription"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Course Description: This is a description of the course..."
+                    android:text="This is a detailed description of the course..."
                     android:textSize="16sp"
-                    android:textColor="#0B0505"
-                    android:layout_marginTop="4dp" />
+                    android:textColor="@color/black"
+                    android:layout_marginTop="6dp" />
 
                 <TextView
                     android:id="@+id/courseDuration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Duration: 4 weeks"
+                    android:text="⏱ Duration: 4 Weeks"
                     android:textSize="14sp"
-                    android:textColor="#040101"
-                    android:layout_marginTop="4dp" />
+                    android:layout_marginTop="6dp" />
 
                 <TextView
                     android:id="@+id/courseLevel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Level: Intermediate"
+                    android:text="📘 Level: Intermediate"
                     android:textSize="14sp"
-                    android:textColor="#020101"
                     android:layout_marginTop="4dp" />
 
+                <!-- Instructor Info -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
 
-                    <ImageView
+                    <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/instructorImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
                         android:scaleType="centerCrop"
-                        android:layout_marginEnd="8dp"
-                        android:contentDescription="@string/instructor_image_desc" />
+                        android:contentDescription="@string/instructor_image_desc"
+                        android:src="@drawable/ic_person" />
 
-                    <TextView
-                        android:id="@+id/instructorName"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Instructor: John Doe"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#009688" />
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp">
 
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:rating="4.0"
-                    android:stepSize="0.5"
-                    android:layout_marginTop="4dp" />
+                        <TextView
+                            android:id="@+id/instructorName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Instructor: John Doe"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primaryColor" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="4.5"
+                            android:stepSize="0.5"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Schedule Card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cardview:cardCornerRadius="12dp"
-            cardview:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
             android:layout_marginBottom="16dp"
-            android:background="#F5F6F6">
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#78D8F0"
-                android:padding="16dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/courseScheduleLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Course Schedule"
+                    android:text="📅 Course Schedule"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#3146EB" />
+                    android:textColor="@color/primaryColor" />
 
                 <TextView
                     android:id="@+id/courseSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Start Date: May 1, 2025\nEnd Date: June 1, 2025\nClass Time: Tues &amp; Thurs 2–4 PM"
+                    android:text="Start: May 1, 2025\nEnd: June 1, 2025\nClasses: Tues and Thurs, 2–4 PM"
                     android:textSize="16sp"
-                    android:textColor="#444444" />
+                    android:textColor="@color/black"
+                    android:layout_marginTop="6dp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Requirements Card -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cardview:cardCornerRadius="12dp"
-            cardview:cardElevation="4dp"
-            android:background="#E3F2FD">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#78D8F0"
-                android:padding="16dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/courseRequirementsLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Course Requirements"
+                    android:text="🧩 Course Requirements"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#2196F3" />
+                    android:textColor="@color/primaryColor" />
 
                 <TextView
                     android:id="@+id/courseRequirements"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No prior knowledge required. Basic understanding of computers is helpful."
+                    android:text="No prior experience required. A basic understanding of computers helps."
                     android:textSize="16sp"
-                    android:textColor="#444444" />
+                    android:textColor="@color/black"
+                    android:layout_marginTop="6dp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Buttons -->
         <LinearLayout
@@ -183,30 +191,36 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:paddingTop="8dp">
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/enrollButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Enroll Now"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"
+                app:backgroundTint="@color/primaryColor"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/ic_enroll"
+                app:iconTint="@color/white" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/startCourseButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Start Course"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#A0A2A0"
-                android:layout_marginStart="8dp"
-                android:enabled="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_play"
+                app:iconTint="@color/white"
+                android:enabled="false"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

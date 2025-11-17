@@ -38,6 +38,9 @@
         <activity android:name=".MyCoursesActivity" android:exported="true" />
         <activity android:name=".CourseContentActivity" />
         <activity android:name=".EnrolledCoursesActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".AskMeAnythingActivity" android:exported="true" />
         <activity android:name=".CategoryCoursesActivity" android:exported="true" />
         <activity android:name=".VideoPlayerActivity" android:exported="true" />
